@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vivek Kumar | AI Governance Architect and Speaker</title>
+  <meta name="description" content="Vivek Kumar helps leaders govern what AI can reach, combine, and act on. Speaker, AI governance architect, creator of PAARA, AI2030 Global Fellow, and peer reviewer for NeurIPS, AIES, Elsevier and Springer.">
+  <meta name="theme-color" content="#11110f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vivek Kumar | AI Governance Architect and Speaker">
+  <meta property="og:description" content="Govern what AI can reach. Practical governance for generative and agentic AI. Creator of PAARA and AI2030 Global Fellow.">
+  <meta property="og:image" content="https://vkktask.github.io/assets/vivek-kumar.jpg">
+  <meta property="og:url" content="https://vkktask.github.io/">
+  <link rel="canonical" href="https://vkktask.github.io/">
+  <style>
+    :root {
+      --ink: #11110f;
+      --ink-soft: #1e1e1a;
+      --paper: #f5f2ea;
+      --white: #fffdf8;
+      --line: #cdc8bc;
+      --muted: #69665f;
+      --signal: #e4512e;
+      --signal-dark: #b9361b;
+      --sage: #3f665e;
+      --max: 1180px;
+      --nav: 68px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
+    ::selection { background: var(--signal); color: var(--white); }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 200;
+      background: var(--white);
+      color: var(--ink);
+      padding: 10px 14px;
+      border: 1px solid var(--ink);
+      transition: top 160ms ease;
+    }
+    .skip-link:focus { top: 12px; }
+    .shell { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--signal);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .serif { font-family: Georgia, "Times New Roman", serif; }
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 3px;
+      transition: color 160ms ease, gap 160ms ease;
+    }
+    .arrow-link:hover { color: var(--signal); gap: 17px; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav);
+      background: rgba(17, 17, 15, .94);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, .14);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .brand-mark { width: 9px; height: 9px; background: var(--signal); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      color: #d8d4cb;
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 160ms ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .nav-contact { color: var(--white); border-bottom: 1px solid var(--signal); }
+    .menu-button {
+      display: none;
+      border: 0;
+      background: none;
+      padding: 10px 0 10px 12px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 112px);
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--white);
+      isolation: isolate;
+    }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% 8%;
+      filter: saturate(.86) contrast(1.03);
+      z-index: -3;
+      transform: scale(1.015);
+      animation: settle 1.3s cubic-bezier(.2,.7,.2,1) both;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(17,17,15,.98) 0%, rgba(17,17,15,.91) 41%, rgba(17,17,15,.18) 70%, rgba(17,17,15,.06) 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 18%;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(17,17,15,.7), transparent);
+    }
+    .hero-inner {
+      min-height: calc(100svh - 112px);
+      display: flex;
+      align-items: center;
+      padding: 72px 0 66px;
+    }
+    .hero-copy { width: min(660px, 61%); }
+    .hero-kicker {
+      margin: 0 0 24px;
+      color: #e8e3d8;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      animation: rise 650ms 100ms both;
+    }
+    .hero h1 {
+      margin: 0;
+      color: var(--white);
+      font-size: 112px;
+      font-weight: 800;
+      line-height: .82;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      animation: rise 720ms 180ms both;
+    }
+    .hero-line {
+      display: block;
+      margin-top: 28px;
+      color: var(--white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 66px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1;
+      text-transform: none;
+    }
+    .hero-line em { color: var(--signal); font-style: inherit; }
+    .hero-summary {
+      max-width: 600px;
+      margin: 30px 0 0;
+      color: #d7d2c8;
+      font-size: 20px;
+      line-height: 1.55;
+      animation: rise 720ms 280ms both;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      margin-top: 36px;
+      animation: rise 720ms 380ms both;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--signal); color: var(--white); }
+    .button-primary:hover { background: #ff6843; }
+    .button-secondary { border-color: rgba(255,255,255,.46); color: var(--white); }
+    .button-secondary:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+    .hero-role {
+      position: absolute;
+      right: max(24px, calc((100% - var(--max)) / 2));
+      bottom: 24px;
+      max-width: 410px;
+      margin: 0;
+      color: #efebe1;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      line-height: 1.55;
+      text-align: right;
+      text-transform: uppercase;
+      animation: rise 720ms 500ms both;
+    }
+    .hero-role span { color: var(--signal); }
+
+    .proof-strip { border-bottom: 1px solid var(--line); background: var(--white); }
+    .proof-inner {
+      min-height: 88px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1.2fr;
+      align-items: center;
+    }
+    .proof-item {
+      min-width: 0;
+      padding: 18px 28px;
+      border-right: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { padding-right: 0; border-right: 0; }
+    .proof-item strong { display: block; color: var(--ink); font-size: 15px; }
+
+    .section { padding: 112px 0; }
+    .section-header {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 44px;
+      margin-bottom: 58px;
+      align-items: start;
+    }
+    .section-index {
+      color: var(--signal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      max-width: 890px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 68px;
+      font-weight: 400;
+      line-height: 1.02;
+    }
+    .section-title em { color: var(--signal); font-style: italic; }
+    .section-lede {
+      max-width: 780px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 22px;
+      line-height: 1.55;
+    }
+
+    .perspective-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(330px, .92fr);
+      gap: 90px;
+      align-items: start;
+    }
+    .perspective-copy p {
+      max-width: 650px;
+      margin: 0 0 24px;
+      color: #3e3c37;
+      font-size: 18px;
+    }
+    .question-list { border-top: 1px solid var(--ink); }
+    .question {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      padding: 19px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .question span { color: var(--signal); font-size: 12px; font-weight: 800; }
+    .question p { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.35; }
+
+    .talks { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .talk-list { border-top: 2px solid var(--ink); }
+    .talk { border-bottom: 1px solid var(--line); }
+    .talk summary {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr) 46px;
+      gap: 30px;
+      align-items: center;
+      padding: 34px 0;
+      list-style: none;
+      cursor: pointer;
+    }
+    .talk summary::-webkit-details-marker { display: none; }
+    .talk-number { color: var(--signal); font-size: 13px; font-weight: 800; letter-spacing: .12em; }
+    .talk-title { margin: 0; font-size: 38px; line-height: 1.15; }
+    .talk-subtitle { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
+    .talk-toggle {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+    }
+    .talk-toggle::before,
+    .talk-toggle::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 14px;
+      height: 1px;
+      background: var(--ink);
+      transform: translate(-50%, -50%);
+      transition: transform 180ms ease;
+    }
+    .talk-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+    .talk[open] .talk-toggle { background: var(--signal); border-color: var(--signal); }
+    .talk[open] .talk-toggle::before,
+    .talk[open] .talk-toggle::after { background: var(--white); }
+    .talk[open] .talk-toggle::after { transform: translate(-50%, -50%) rotate(0); }
+    .talk-detail {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1.3fr) minmax(280px, .8fr);
+      gap: 30px;
+      padding: 0 0 42px;
+    }
+    .talk-description { margin: 0; color: #3e3c37; font-size: 17px; }
+    .talk-meta { border-left: 1px solid var(--line); padding-left: 28px; }
+    .talk-meta h4 { margin: 0 0 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    .talk-meta p, .talk-meta ul { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
+    .talk-meta ul { padding-left: 18px; }
+    .talk-meta li { margin-bottom: 5px; }
+
+    .paara { background: var(--ink); color: var(--white); }
+    .paara .section-index { color: #ff7a57; }
+    .paara .section-lede { color: #c7c2b8; }
+    .paara-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .85fr);
+      gap: 78px;
+      align-items: end;
+    }
+    .paara-word {
+      margin: 0;
+      color: var(--white);
+      font-size: 156px;
+      font-weight: 900;
+      line-height: .75;
+      letter-spacing: 0;
+    }
+    .paara-name { margin: 28px 0 0; color: #aaa59c; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; }
+    .paara-copy p { margin: 0 0 24px; color: #d6d1c8; font-size: 17px; }
+    .paara-copy .arrow-link { color: #ff7a57; }
+    .paara-steps {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin-top: 74px;
+      border-top: 1px solid #494942;
+      border-bottom: 1px solid #494942;
+    }
+    .paara-step { min-height: 136px; padding: 20px 14px 18px 0; border-right: 1px solid #494942; }
+    .paara-step:last-child { border-right: 0; }
+    .paara-step strong { display: block; color: #ff7a57; font-size: 12px; }
+    .paara-step span { display: block; margin-top: 26px; font-size: 13px; line-height: 1.35; }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, .68fr) minmax(0, 1.32fr);
+      gap: 88px;
+      align-items: start;
+    }
+    .bio-photo { position: sticky; top: calc(var(--nav) + 28px); }
+    .bio-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; }
+    .bio-photo figcaption { margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .bio-copy .intro {
+      margin: 0 0 34px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      line-height: 1.22;
+    }
+    .bio-copy > p { margin: 0 0 24px; color: #46433e; font-size: 17px; }
+    .credential-line {
+      margin-top: 38px;
+      padding: 22px 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      word-spacing: 14px;
+    }
+
+    .proof-work { background: #e9e6dd; }
+    .work-list { border-top: 2px solid var(--ink); }
+    .work-item {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr) 110px;
+      gap: 28px;
+      align-items: center;
+      padding: 27px 0;
+      border-bottom: 1px solid #bdb8ac;
+    }
+    .work-type { color: var(--signal-dark); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .work-item h3 { margin: 0; font-size: 24px; line-height: 1.3; }
+    .work-item p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+    .work-link { justify-self: end; color: var(--ink); font-size: 13px; font-weight: 800; border-bottom: 1px solid var(--ink); }
+    .work-link:hover { color: var(--signal); border-color: var(--signal); }
+
+    .recognition { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .award-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--ink); }
+    .award { min-height: 158px; padding: 26px 26px 26px 0; border-bottom: 1px solid var(--line); }
+    .award:nth-child(odd) { padding-right: 42px; border-right: 1px solid var(--line); }
+    .award:nth-child(even) { padding-left: 42px; }
+    .award-tag { color: var(--signal-dark); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .award h3 { margin: 13px 0 0; font-size: 25px; line-height: 1.25; }
+    .award p { margin: 9px 0 0; color: var(--muted); font-size: 14.5px; }
+
+    .review-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .72fr); gap: 78px; align-items: start; }
+    .review-list { border-top: 2px solid var(--ink); }
+    .review-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 26px;
+      align-items: baseline;
+      padding: 21px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .review-item h3 { margin: 0; font-size: 20px; line-height: 1.3; }
+    .review-item p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+    .review-role { color: var(--signal-dark); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .review-aside { border-top: 2px solid var(--ink); padding-top: 26px; }
+    .review-figure { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 76px; line-height: .9; }
+    .review-figure-label { display: block; margin-top: 14px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+    .review-aside p { margin: 26px 0 0; color: var(--muted); font-size: 14px; }
+
+    .paara-filings {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 34px;
+      margin-top: 58px;
+      padding-top: 30px;
+      border-top: 1px solid #494942;
+    }
+    .paara-filings h3 { margin: 0; color: #ff7a57; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .paara-filings p { margin: 0; color: #c7c2b8; font-size: 16px; }
+    .paara-filings .filing-note { margin-top: 12px; color: #8d887f; font-size: 12.5px; }
+
+    .contact { padding: 94px 0; background: var(--signal); color: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+      gap: 70px;
+      align-items: end;
+    }
+    .contact h2 {
+      max-width: 840px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: .98;
+    }
+    .contact-copy p { margin: 0 0 24px; font-size: 17px; }
+    .contact .button { background: var(--white); color: var(--ink); }
+    .contact .button:hover { background: var(--ink); color: var(--white); }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 18px 24px; margin-top: 24px; font-size: 13px; font-weight: 700; }
+    .contact-links a { border-bottom: 1px solid rgba(255,255,255,.65); }
+
+    footer { background: var(--ink); color: #b8b3a9; }
+    .footer-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 12px;
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 620ms ease, transform 620ms cubic-bezier(.2,.7,.2,1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    @keyframes settle { from { opacity: .4; transform: scale(1.06); } to { opacity: 1; transform: scale(1.015); } }
+
+    @media (max-width: 940px) {
+      .nav-links {
+        position: fixed;
+        inset: var(--nav) 0 auto;
+        display: none;
+        padding: 24px;
+        background: var(--ink);
+        border-top: 1px solid rgba(255,255,255,.1);
+      }
+      .nav-links.is-open { display: grid; gap: 0; }
+      .nav-links a { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 18px; }
+      .menu-button { display: inline-flex; }
+      .hero-copy { width: 68%; }
+      .hero h1 { font-size: 86px; }
+      .hero-line { font-size: 52px; }
+      .hero-summary { font-size: 18px; }
+      .hero-role { display: none; }
+      .section-header { grid-template-columns: 118px 1fr; gap: 30px; }
+      .section-title { font-size: 56px; }
+      .section-lede { font-size: 20px; }
+      .perspective-grid, .paara-grid { gap: 52px; }
+      .talk-title { font-size: 31px; }
+      .talk-detail { grid-template-columns: 58px minmax(0, 1fr); }
+      .talk-detail .talk-meta { grid-column: 2; }
+      .paara-word { font-size: 112px; }
+      .paara-steps { grid-template-columns: repeat(4, 1fr); }
+      .paara-step:nth-child(4) { border-right: 0; }
+      .paara-step:nth-child(-n+3), .paara-step:nth-child(4) { border-bottom: 1px solid #494942; }
+      .bio-grid { gap: 54px; }
+      .bio-copy .intro { font-size: 34px; }
+      .work-item { grid-template-columns: 120px 1fr 80px; }
+      .work-item h3 { font-size: 22px; }
+      .contact h2 { font-size: 64px; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --nav: 60px; }
+      .shell { width: min(100% - 32px, var(--max)); }
+      .brand { font-size: 12px; }
+      .hero { min-height: calc(100svh - 96px); }
+      .hero-image { object-position: 63% 25%; opacity: .82; }
+      .hero::before { background: rgba(17,17,15,.56); }
+      .hero::after { height: 60%; background: linear-gradient(0deg, rgba(17,17,15,.97), rgba(17,17,15,.12)); }
+      .hero-inner { min-height: calc(100svh - 96px); align-items: end; padding: 80px 0 42px; }
+      .hero-copy { width: 100%; }
+      .hero h1 { max-width: 9ch; font-size: 64px; }
+      .hero-line { max-width: 10ch; margin-top: 18px; font-size: 40px; }
+      .hero-kicker { margin-bottom: 14px; font-size: 11px; }
+      .hero-summary { max-width: 32ch; margin-top: 20px; font-size: 16px; }
+      .hero-actions { margin-top: 24px; gap: 10px; }
+      .button { min-height: 44px; padding: 10px 15px; font-size: 13px; }
+      .proof-inner { grid-template-columns: 1fr; padding: 12px 0; }
+      .proof-item, .proof-item:first-child, .proof-item:last-child { padding: 12px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-item:last-child { border-bottom: 0; }
+      .section { padding: 78px 0; }
+      .section-header { grid-template-columns: 1fr; gap: 12px; margin-bottom: 40px; }
+      .section-title { font-size: 46px; }
+      .section-lede { margin-top: 18px; font-size: 18px; }
+      .perspective-grid, .paara-grid, .bio-grid, .contact-grid { grid-template-columns: 1fr; gap: 46px; }
+      .talk summary { grid-template-columns: 46px 1fr 36px; gap: 10px; padding: 26px 0; }
+      .talk-toggle { width: 34px; height: 34px; }
+      .talk-title { font-size: 25px; }
+      .talk-detail { grid-template-columns: 46px 1fr; gap: 10px; }
+      .talk-meta { padding-left: 20px; }
+      .paara-word { font-size: 70px; }
+      .paara-steps { grid-template-columns: 1fr 1fr; }
+      .paara-step, .paara-step:nth-child(4) { min-height: 118px; border-right: 1px solid #494942; border-bottom: 1px solid #494942; }
+      .paara-step:nth-child(even) { padding-left: 14px; border-right: 0; }
+      .paara-step:last-child { grid-column: 1 / -1; border-bottom: 0; }
+      .bio-photo { position: static; }
+      .bio-photo img { aspect-ratio: 1 / 1; object-position: 50% 18%; }
+      .bio-copy .intro { font-size: 29px; }
+      .credential-line { word-spacing: 7px; }
+      .work-item { grid-template-columns: 1fr; gap: 6px; padding: 23px 0; }
+      .work-link { justify-self: start; margin-top: 8px; }
+      .award-list { grid-template-columns: 1fr; }
+      .award, .award:nth-child(odd), .award:nth-child(even) { min-height: 0; padding: 22px 0; border-right: 0; }
+      .review-grid { grid-template-columns: 1fr; gap: 42px; }
+      .paara-filings { grid-template-columns: 1fr; gap: 16px; }
+      .contact h2 { font-size: 50px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding: 22px 0; }
+    }
+
+    @media (max-width: 410px) {
+      .hero h1 { font-size: 54px; }
+      .hero-line { font-size: 36px; }
+      .section-title { font-size: 40px; }
+      .talk-title { font-size: 23px; }
+      .contact h2 { font-size: 44px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vivek Kumar",
+    "url": "https://vkktask.github.io/",
+    "image": "https://vkktask.github.io/assets/vivek-kumar.jpg",
+    "jobTitle": "AI Governance Architect and Speaker",
+    "description": "Vivek Kumar helps leaders govern what AI can reach, combine, and act on.",
+    "sameAs": [
+      "https://www.linkedin.com/in/vivekdp/",
+      "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6784078"
+    ],
+    "knowsAbout": [
+      "AI governance",
+      "Responsible AI",
+      "Data protection and privacy",
+      "Agentic AI risk",
+      "Enterprise AI connectors"
+    ],
+    "award": [
+      "Best Paper Award, ComSIA 2026 (Springer Lecture Notes in Networks and Systems)",
+      "AI2030 Global Fellow"
+    ],
+    "hasCredential": ["AIGP", "FIP", "CIPP/US", "CIPP/E", "CIPM", "CISM"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Vivek Kumar home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Vivek Kumar
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <div class="nav-links" id="site-menu">
+        <a href="#talks">Signature talks</a>
+        <a href="#paara">PAARA</a>
+        <a href="#about">About</a>
+        <a href="#recognition">Recognition</a>
+        <a class="nav-contact" href="#contact">Book Vivek</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero" id="top">
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/vivek-kumar-480.jpg">
+        <img class="hero-image" src="assets/vivek-kumar.jpg" alt="Vivek Kumar, AI governance architect and speaker" width="800" height="800">
+      </picture>
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">AI Governance Risk Architect + Speaker</p>
+          <h1>Vivek<br>Kumar<span class="hero-line">Govern what AI can <em>reach.</em></span></h1>
+          <p class="hero-summary">Vivek helps leaders move from AI ambition to controlled, auditable, enterprise-ready adoption.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:vkktaskusa@gmail.com?subject=Speaking%20inquiry%20for%20Vivek%20Kumar">Invite Vivek to speak <span aria-hidden="true">&rarr;</span></a>
+            <a class="button button-secondary" href="#talks">Explore signature talks</a>
+          </div>
+        </div>
+      </div>
+      <p class="hero-role"><span>Independent</span> AI governance risk architect &middot; Creator of PAARA</p>
+    </header>
+
+    <div class="proof-strip" aria-label="Selected credentials">
+      <div class="shell proof-inner">
+        <div class="proof-item"><strong>15+ years</strong>Privacy, data protection, security and AI governance</div>
+        <div class="proof-item"><strong>Creator of PAARA</strong>Connector-layer governance for enterprise AI</div>
+        <div class="proof-item"><strong>AI2030 Global Fellow</strong>Merit-selected global AI leadership fellowship</div>
+        <div class="proof-item"><strong>AIGP &middot; FIP &middot; CIPP/US &middot; CIPP/E &middot; CIPM &middot; CISM</strong>Certified across AI governance, privacy and security</div>
+      </div>
+    </div>
+
+    <section class="section" id="perspective">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">01 / Point of view</div>
+          <div>
+            <h2 class="section-title">The governance gap is often in the <em>connections.</em></h2>
+            <p class="section-lede">A model can look controlled in isolation while its connectors quietly widen access, combine sensitive context, and enable action across the enterprise.</p>
+          </div>
+        </div>
+        <div class="perspective-grid reveal">
+          <div class="perspective-copy">
+            <p>Vivek translates this technical reality into decisions leaders can own. His work focuses on the connector layer behind generative and agentic AI: permissions, retrieval boundaries, data paths, delegated actions, evidence, and accountable human oversight.</p>
+            <p>The aim is practical: turn governance from a policy artifact into an operating discipline that delivery teams can use and executives can defend.</p>
+            <a class="arrow-link" href="#paara">See the PAARA method <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="question-list" aria-label="Five questions for enterprise AI">
+            <div class="question"><span>01</span><p>What can the system reach?</p></div>
+            <div class="question"><span>02</span><p>What can it combine?</p></div>
+            <div class="question"><span>03</span><p>What can it reveal?</p></div>
+            <div class="question"><span>04</span><p>What can it act on?</p></div>
+            <div class="question"><span>05</span><p>Who remains accountable?</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section talks" id="talks">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">02 / Signature talks</div>
+          <div>
+            <h2 class="section-title">Three conversations for the <em>agentic enterprise.</em></h2>
+            <p class="section-lede">Keynotes and executive sessions built to sharpen decisions, clarify accountability, and give teams a practical way forward.</p>
+          </div>
+        </div>
+
+        <div class="talk-list reveal">
+          <details class="talk" open>
+            <summary>
+              <span class="talk-number">Talk 01</span>
+              <div>
+                <h3 class="talk-title">Govern What AI Can Reach</h3>
+                <p class="talk-subtitle">The Connector Layer Behind Enterprise AI Risk</p>
+              </div>
+              <span class="talk-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="talk-detail">
+              <span aria-hidden="true"></span>
+              <p class="talk-description">Enterprise AI assistants do not stay inside the model. They connect to email, documents, customer systems, knowledge bases, and tools, then assemble context across boundaries that traditional inventories rarely capture. Vivek gives leaders a five-question method for finding these hidden data-access and accountability risks before a deployment scales. The session replaces abstract warnings with a concrete operating view of permissions, retrieval, aggregation, logging, and control ownership.</p>
+              <div class="talk-meta">
+                <h4>Ideal audience</h4>
+                <p>Boards, CIOs, CISOs, privacy and risk leaders, AI program owners</p>
+                <h4>Audience leaves able to</h4>
+                <ul><li>Map the connector layer</li><li>Spot permission and retrieval risk</li><li>Ask better approval questions</li></ul>
+                <p><strong>Format:</strong> 30-45 minute keynote or 60-minute executive session</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="talk">
+            <summary>
+              <span class="talk-number">Talk 02</span>
+              <div>
+                <h3 class="talk-title">From AI Policy to Operating Control</h3>
+                <p class="talk-subtitle">How Leaders Make Governance Work at Enterprise Speed</p>
+              </div>
+              <span class="talk-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="talk-detail">
+              <span aria-hidden="true"></span>
+              <p class="talk-description">Principles matter, but teams need decisions they can apply under delivery pressure. This session shows how to translate AI policies and regulatory frameworks into ownership, decision rights, evidence, escalation paths, and review points. Vivek connects board-level intent to the work of product, engineering, privacy, security, legal, and procurement teams, helping leaders build governance that moves with the system rather than arriving after deployment.</p>
+              <div class="talk-meta">
+                <h4>Ideal audience</h4>
+                <p>Executives, governance leaders, legal and compliance teams, product and technology leaders</p>
+                <h4>Audience leaves able to</h4>
+                <ul><li>Turn principles into controls</li><li>Assign defensible decision rights</li><li>Create evidence that survives scrutiny</li></ul>
+                <p><strong>Format:</strong> 35-50 minute keynote, workshop, or leadership briefing</p>
+              </div>
+            </div>
+          </details>
+
+          <details class="talk">
+            <summary>
+              <span class="talk-number">Talk 03</span>
+              <div>
+                <h3 class="talk-title">When AI Can Act</h3>
+                <p class="talk-subtitle">Human Accountability in the Agentic Enterprise</p>
+              </div>
+              <span class="talk-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="talk-detail">
+              <span aria-hidden="true"></span>
+              <p class="talk-description">The governance question changes when AI moves from recommending to using tools, delegating work, and taking action. Vivek prepares leaders for that shift by examining authority limits, human checkpoints, exception handling, audit evidence, and the conditions under which an agent should stop. The session gives organizations a practical vocabulary for preserving human accountability without freezing responsible experimentation.</p>
+              <div class="talk-meta">
+                <h4>Ideal audience</h4>
+                <p>Executive teams, boards, agentic-AI builders, risk leaders, educators and professional associations</p>
+                <h4>Audience leaves able to</h4>
+                <ul><li>Define action boundaries</li><li>Place meaningful human review</li><li>Design escalation and stop conditions</li></ul>
+                <p><strong>Format:</strong> 30-45 minute keynote or panel-opening provocation</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paara" id="paara">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">03 / Original framework</div>
+          <div>
+            <h2 class="section-title">Governance for the layer most assessments <em>miss.</em></h2>
+            <p class="section-lede">PAARA is Vivek's practitioner methodology for evaluating connector-layer risk in generative and agentic AI.</p>
+          </div>
+        </div>
+        <div class="paara-grid reveal">
+          <div>
+            <p class="paara-word" aria-label="PAARA">PAARA</p>
+            <p class="paara-name">Privacy-Aware AI Risk Architecture</p>
+          </div>
+          <div class="paara-copy">
+            <p>PAARA examines what enterprise AI can access at query time, where its retrieval boundaries sit, how permissions accumulate, and what evidence exists when systems combine data or take action.</p>
+            <p>It complements established privacy, security, and AI-risk processes by adding a structured view of the connector layer.</p>
+            <a class="arrow-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6784078" target="_blank" rel="noopener">Read the working paper <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div class="paara-steps reveal" aria-label="PAARA assessment components">
+          <div class="paara-step"><strong>A</strong><span>Connector inventory</span></div>
+          <div class="paara-step"><strong>B</strong><span>Impact triggers</span></div>
+          <div class="paara-step"><strong>C</strong><span>Permission risk</span></div>
+          <div class="paara-step"><strong>D</strong><span>Retrieval boundaries</span></div>
+          <div class="paara-step"><strong>E</strong><span>Injection exposure</span></div>
+          <div class="paara-step"><strong>F</strong><span>Insider amplification</span></div>
+          <div class="paara-step"><strong>G</strong><span>Control alignment</span></div>
+        </div>
+        <div class="paara-filings reveal">
+          <h3>Applied research filings</h3>
+          <div>
+            <p>Eight U.S. provisional patent applications filed as sole inventor, covering connector capability registries, automated connector review, control-decay monitoring, and AI risk evidence &mdash; the applied engineering work behind the PAARA method.</p>
+            <p class="filing-note">Provisional applications only. No issued patent is claimed or implied.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">04 / About Vivek</div>
+          <div>
+            <h2 class="section-title">Technical depth, translated into <em>executive action.</em></h2>
+          </div>
+        </div>
+        <div class="bio-grid">
+          <figure class="bio-photo reveal">
+            <img src="assets/vivek-kumar.jpg" alt="Portrait of Vivek Kumar" width="800" height="800" loading="lazy">
+            <figcaption>Vivek Kumar &middot; AI Governance Architect and Speaker</figcaption>
+          </figure>
+          <div class="bio-copy reveal">
+            <p class="intro">Vivek Kumar helps executives answer a question most AI programs postpone: what can the system reach, combine, and act on once it is connected to the enterprise?</p>
+            <p>He is an AI governance architect, privacy and cybersecurity leader, and creator of PAARA, a practitioner methodology for evaluating connector-layer risk in generative and agentic AI.</p>
+            <p>His background spans enterprise responsible AI, data protection, information governance, and regulatory compliance across technology, analytics, healthcare, and insurance environments. Vivek has served in senior governance and data protection roles, contributed practitioner analysis to the IAPP, and spoken to executive, policy, and professional audiences.</p>
+            <p>He is an AI2030 Global Fellow and a researcher affiliated with Indiana Wesleyan University. His peer-review service spans the NeurIPS ethics review process, the ACM/AAAI Conference on AI, Ethics, and Society, and journals published by Elsevier and Springer.</p>
+            <p>His work gives leaders a practical way to connect AI ambition with access controls, evidence, accountability, and human oversight.</p>
+            <div class="credential-line" aria-label="Credentials">AIGP &middot; FIP &middot; CIPP/US &middot; CIPP/E &middot; CIPM &middot; CISM</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section recognition" id="recognition">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">05 / Recognition</div>
+          <div>
+            <h2 class="section-title">Selected by peers, not by <em>application fee.</em></h2>
+            <p class="section-lede">Merit-based recognition from academic committees and global AI leadership programmes.</p>
+          </div>
+        </div>
+        <div class="award-list reveal">
+          <article class="award">
+            <div class="award-tag">Best Paper Award &middot; 2026</div>
+            <h3>ComSIA 2026</h3>
+            <p>Springer, Lecture Notes in Networks and Systems. Awarded by the conference technical committee for research on governance of connected AI systems.</p>
+          </article>
+          <article class="award">
+            <div class="award-tag">Fellowship &middot; Global</div>
+            <h3>AI2030 Global Fellow</h3>
+            <p>Merit-selected fellowship for practitioners advancing responsible and trustworthy AI, admitted through committee review.</p>
+          </article>
+          <article class="award">
+            <div class="award-tag">Recognition &middot; 2024</div>
+            <h3>FDPPI Privacy Awards</h3>
+            <p>Recognised by the Foundation of Data Protection Professionals in India for contribution to data protection practice.</p>
+          </article>
+          <article class="award">
+            <div class="award-tag">Credentials</div>
+            <h3>FIP &middot; AIGP &middot; CIPP/US &middot; CIPP/E &middot; CIPM &middot; CISM</h3>
+            <p>Fellow of Information Privacy, the IAPP's highest designation, held alongside certification across AI governance, privacy management and information security.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="review">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">06 / Peer review and editorial service</div>
+          <div>
+            <h2 class="section-title">Trusted to judge the <em>field's own work.</em></h2>
+            <p class="section-lede">Invited review and programme-committee service for leading AI, ethics and governance venues.</p>
+          </div>
+        </div>
+        <div class="review-grid">
+          <div class="review-list reveal">
+            <article class="review-item">
+              <div><h3>NeurIPS 2026</h3><p>Conference on Neural Information Processing Systems</p></div>
+              <div class="review-role">Ethics reviewer</div>
+            </article>
+            <article class="review-item">
+              <div><h3>AIES 2026</h3><p>ACM/AAAI Conference on AI, Ethics, and Society</p></div>
+              <div class="review-role">Programme committee</div>
+            </article>
+            <article class="review-item">
+              <div><h3>Journal of Responsible Technology</h3><p>Elsevier</p></div>
+              <div class="review-role">Reviewer</div>
+            </article>
+            <article class="review-item">
+              <div><h3>AI and Ethics</h3><p>Springer</p></div>
+              <div class="review-role">Reviewer</div>
+            </article>
+            <article class="review-item">
+              <div><h3><a class="arrow-link" style="border-bottom:1px solid var(--line)" href="https://apartresearch.com/sprints/global-south-ais-hackathon-2026-06-19-to-2026-06-21" target="_blank" rel="noopener">Global South AI Safety Hackathon</a></h3><p>Apart Research &middot; AI Governance and Policy track</p></div>
+              <div class="review-role">Judge</div>
+            </article>
+            <article class="review-item">
+              <div><h3>IEEE and Springer conferences</h3><p>FTNCT, IATMSI, ICiTsIF, GAISS and SASIGD programme committees</p></div>
+              <div class="review-role">Technical reviewer</div>
+            </article>
+          </div>
+          <aside class="review-aside reveal">
+            <span class="review-figure">40+</span>
+            <span class="review-figure-label">research papers reviewed across AI ethics, governance and security venues.</span>
+            <p>Review service is invited, unpaid and independent. It is how Vivek stays close to the research frontier that executive audiences are asked to govern.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-work" id="work">
+      <div class="shell">
+        <div class="section-header reveal">
+          <div class="section-index">07 / Public work</div>
+          <div>
+            <h2 class="section-title">Published, heard, and <em>in the room.</em></h2>
+            <p class="section-lede">Selected public work that shows the range of Vivek's contribution: analysis, research, conversation, and practitioner review.</p>
+          </div>
+        </div>
+        <div class="work-list reveal">
+          <article class="work-item">
+            <div class="work-type">IAPP analysis</div>
+            <div><h3>Privacy programs can't see AI connectors</h3><p>Connector-driven data flows and the emerging insider-risk blind spot &middot; 2026</p></div>
+            <a class="work-link" href="https://iapp.org/news/a/privacy-programs-can-t-see-ai-connectors-and-that-s-creating-a-new-insider-threat" target="_blank" rel="noopener">Read <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="work-item">
+            <div class="work-type">Working paper</div>
+            <div><h3>PAARA: A Connector-Layer Risk Assessment Methodology</h3><p>SSRN working paper &middot; DOI 10.2139/ssrn.6784078</p></div>
+            <a class="work-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6784078" target="_blank" rel="noopener">Read <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="work-item">
+            <div class="work-type">Peer-reviewed</div>
+            <div><h3>IEEE SoutheastCon 2026</h3><p>Conference paper &middot; DOI 10.1109/SEASCON59249.2026</p></div>
+            <a class="work-link" href="https://doi.org/10.1109/SEASCON59249.2026" target="_blank" rel="noopener">Read <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="work-item">
+            <div class="work-type">Book chapter</div>
+            <div><h3>Ethical Consideration and Challenges in Quantum AI</h3><p>De Gruyter &middot; DOI 10.1515/9783112217269-013</p></div>
+            <a class="work-link" href="https://doi.org/10.1515/9783112217269-013" target="_blank" rel="noopener">Read <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="work-item">
+            <div class="work-type">Podcast</div>
+            <div><h3>The Data Diva Talks Privacy</h3><p>Conversation with Debbie Reynolds on privacy-aware AI risk &middot; 2023</p></div>
+            <a class="work-link" href="https://podcastrepublic.net/podcast/1559159451" target="_blank" rel="noopener">Listen <span aria-hidden="true">&rarr;</span></a>
+          </article>
+          <article class="work-item">
+            <div class="work-type">Industry panel</div>
+            <div><h3>Practical AI: Use Cases That Deliver Value</h3><p>Info-Tech LIVE, Las Vegas &middot; 2024</p></div>
+            <span class="work-link">Panelist</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell contact-grid reveal">
+        <h2>Bring sharper AI governance into the room.</h2>
+        <div class="contact-copy">
+          <p>For keynotes, executive briefings, panels, podcasts, and professional or university programs.</p>
+          <a class="button" href="mailto:vkktaskusa@gmail.com?subject=Speaking%20inquiry%20for%20Vivek%20Kumar">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/vivekdp/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6784078" target="_blank" rel="noopener">SSRN</a>
+            <a href="https://iapp.org/news/a/privacy-programs-can-t-see-ai-connectors-and-that-s-creating-a-new-insider-threat" target="_blank" rel="noopener">IAPP</a>
+            <a href="mailto:vkktaskusa@gmail.com">vkktaskusa@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>&copy; 2026 Vivek Kumar. All rights reserved.</div>
+      <div>AI Governance Architect and Speaker &middot; Govern what AI can reach.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const menu = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? 'Close' : 'Menu';
+      document.body.classList.toggle('menu-open', open);
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = 'Menu';
+        document.body.classList.remove('menu-open');
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+    let frameRequested = false;
+    const heroImage = document.querySelector('.hero-image');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      window.addEventListener('scroll', () => {
+        if (frameRequested) return;
+        frameRequested = true;
+        window.requestAnimationFrame(() => {
+          const shift = Math.min(window.scrollY * 0.045, 22);
+          heroImage.style.translate = `0 ${shift}px`;
+          frameRequested = false;
+        });
+      }, { passive: true });
+    }
+  </script>
+</body>
+</html>
